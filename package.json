@@ -1,0 +1,13 @@
+{
+  "name": "ptt-app",
+  "version": "1.0.0",
+  "description": "LAN PTT walkie-talkie — server relay over Socket.IO",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}

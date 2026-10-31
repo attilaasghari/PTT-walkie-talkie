@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>PTT</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- ================= MAIN VIEW ================= -->
+  <div id="main-view" class="view">
+
+    <header class="hdr">
+      <div class="hdr-left">
+        <span class="label">CHANNEL</span>
+        <span id="channel-name" class="channel-name">ALPHA</span>
+      </div>
+      <div class="hdr-right">
+        <span class="label">LOCAL</span>
+        <span id="clock" class="clock">--:--:--</span>
+      </div>
+    </header>
+
+    <div class="status-strip">
+      <span class="dot" id="status-dot"></span>
+      <span id="status-text" class="status-text">IDLE</span>
+    </div>
+
+    <main class="body">
+      <section class="ptt-col">
+        <button id="ptt-btn" class="ptt-btn" type="button" aria-label="Hold to talk">
+          <span class="ptt-btn-label" id="ptt-label">HOLD TO TALK</span>
+        </button>
+      </section>
+
+      <aside class="units-panel" aria-label="Connected units">
+        <div class="panel-hdr">
+          <span class="label">CONNECTED UNITS</span>
+          <span id="units-count" class="units-count">00</span>
+        </div>
+        <table class="units-table">
+          <thead>
+            <tr><th>ID</th><th>CH</th><th>IP</th></tr>
+          </thead>
+          <tbody id="units-body">
+            <tr class="is-empty"><td colspan="3">NO UNITS</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </main>
+
+    <footer class="ftr">
+      <button id="btn-channel" class="ctl-btn" type="button">
+        <span class="ctl-btn-label">CHANNEL</span>
+      </button>
+      <button id="btn-power" class="ctl-btn ctl-btn--power" type="button" aria-pressed="true">
+        <span class="ctl-btn-label">POWER</span>
+        <span class="ctl-btn-state" id="power-state">ON</span>
+      </button>
+    </footer>
+
+  </div>
+
+  <!-- ================= CHANNEL SELECT VIEW ================= -->
+  <div id="channel-view" class="view view--hidden">
+    <header class="hdr">
+      <div class="hdr-left">
+        <span class="label">SELECT CHANNEL</span>
+      </div>
+      <div class="hdr-right">
+        <span class="label">LOCAL</span>
+        <span class="clock" id="clock-2">--:--:--</span>
+      </div>
+    </header>
+
+    <main class="channel-grid" role="group" aria-label="Channel selection">
+      <button class="channel-btn" data-channel="ALPHA" type="button">ALPHA</button>
+      <button class="channel-btn" data-channel="BRAVO" type="button">BRAVO</button>
+      <button class="channel-btn" data-channel="CHARLIE" type="button">CHARLIE</button>
+      <button class="channel-btn" data-channel="DELTA" type="button">DELTA</button>
+    </main>
+
+    <footer class="ftr ftr--single">
+      <button id="btn-back" class="ctl-btn" type="button">
+        <span class="ctl-btn-label">BACK</span>
+      </button>
+    </footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
