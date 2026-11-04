@@ -71,7 +71,7 @@ ptt-app/
 ## Quick start (laptop only, no HTTPS)
 
 ```bash
-git clone <this-repo-url> ptt-app
+git clone https://github.com/attilaasghari/PTT-walkie-talkie
 cd ptt-app
 npm install
 npm start
